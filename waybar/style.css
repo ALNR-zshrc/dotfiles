@@ -1,44 +1,124 @@
+/* --- Dracula Theme Palette --- */
+@define-color background #282a36;
+@define-color current-line #2c2736;
+@define-color selection    #44475a;
+@define-color foreground   #f8f8f2;
+@define-color comment      #6272a4;
+@define-color cyan         #8be9fd;
+@define-color green        #50fa7b;
+@define-color orange       #ffb86c;
+@define-color pink         #ff79c6;
+@define-color purple       #bd93f9;
+@define-color red          #ff5555;
+@define-color yellow       #f1fa8c;
+
 * {
-    font-family: "JetBrainsMono Nerd Font", monospace;
-    font-size: 15px;
+    font-family: "JetBrainsMono Nerd Font", "Roboto", sans-serif;
+    font-size: 13px;
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
 }
 
 window#waybar {
-    /* Темно-зеленый оттенок с прозрачностью для блюра */
-    background: rgba(0, 0, 0, 1); 
-    color: #ffffff; /* Хакерский зеленый */
-    border-bottom: none;
-    border: none; 
-    border-bottom: none;
-    box-shadow: none;
+    background-color: rgba( 11, 9, 15 , 0.95); /* Dracula Background */
+    color: @foreground;
 }
 
+/* Модули-капсулы */
+#window,
+#clock,
+#bluetooth,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery {
+    padding: 0 12px;
+    margin: 4px 2px;
+    background-color: @current-line;
+    border-radius: 4px; /* У Дракулы обычно более острые углы */
+    color: @foreground;
+}
+
+/* Воркспейсы */
 #workspaces button {
-    padding: 0 10px;
-    color: #b5b3b3;
+    padding: 0 7px;
+    margin: 0px 3px;
+    background-color: #1b1821;
+    color: @comment;
+    transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    color: #ffffff;
-    background: rgba(250, 250, 250, 0.1);
-    text-shadow: 0 0 5px #ffffff;
-    
-}
-#workspaces button:hover {
-    color: #ffffff;            
-    background: #616161;        
-    opacity: 0.6;                
-}
-/* Эффект блоков для каждого модуля */
-#cpu, #memory, #temperature, #network, #pulseaudio, #battery, #clock, #custom-launcher {
-    padding: 0 12px;
-    margin: 4px 2px;
-    background: rgba(0, 255, 153, 0.0);
+    color: @purple;
+    border-bottom: 3px solid @purple;
 }
 
+#workspaces button:hover {
+    background-color: @selection;
+    color: @cyan;
+
+}
+
+/* Акценты Dracula */
 #clock {
-    color: #ffffff;
+    color: @foreground;
+    background-color: @purple;
     font-weight: bold;
+}
+
+#bluetooth {
+    color: @cyan;
+}
+
+#pulseaudio {
+    color: @yellow;
+}
+
+#network {
+    color: @pink;
+}
+
+#cpu {
+    color: @red;
+}
+
+#memory {
+    color: @orange;
+}
+
+#temperature {
+    color: @cyan;
+}
+
+#temperature.critical {
+    background-color: @red;
+    color: @foreground;
+}
+
+#battery {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @orange;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @red;
+    color: @foreground;
+    animation: blink 0.5s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @current-line;
+    }
+}
+
+#window {
+    background-color: transparent;
+    color: @comment;
+    font-style: italic;
 }

@@ -7,16 +7,35 @@
     "margin-right": 0,
     "spacing": 0,
 
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["cpu", "memory" ],
-    "modules-right": ["cpu", "temperature", "memory", "pulseaudio", "network", "battery"],
+    "modules-left": [
+	    "clock", 
+	    "hyprland/workspaces"
+    ],
+    "modules-center": [
+	    "bluetooth",
+	    "pulseaudio",
+	    "network"
+    ],
+    "modules-right": [
+	    "cpu", 
+	    "memory",
+	    "temperature",
+	    "battery" 
+    ],
 
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate"
     },
-
-    "cpu": { "format": "  {usage}%", "interval": 2 },
+"bluetooth": {
+    "format": " {status}",
+    "format-disabled": " off", // символ bluetooth выключен
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager" // Утилита для управления, обычно есть в CachyOS
+},    "cpu": { "format": "  {usage}%", "interval": 2 },
     "temperature": { "format": " {temperatureC}°C" },
     "memory": { "format": " {used:0.1f}G" },
     "pulseaudio": {
@@ -26,7 +45,8 @@
     },
     "network": {
         "format-wifi": " ",
-        "format-disconnected": "⚠ Offline"
+        "format-disconnected": "⚠ Offline",
+	"on-click": "networkmanager_dmenu"
     },
     "battery": {
         "format": "{icon} {capacity}%",
