@@ -12,14 +12,15 @@
 	    "hyprland/workspaces"
     ],
     "modules-center": [
-	    "bluetooth",
 	    "pulseaudio",
-	    "network"
+	    "network",
+	    "backlight"
     ],
     "modules-right": [
-	    "cpu", 
+	    "cpu",
+    	    "temperature",
 	    "memory",
-	    "temperature",
+	    //"bluetooth",
 	    "battery" 
     ],
 
@@ -55,5 +56,9 @@
     "clock": {
         "format": "{:%H:%M}",
         "format-alt": " {:%d.%m.%Y}"
-    }
-}
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+}}

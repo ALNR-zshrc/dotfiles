@@ -26,6 +26,7 @@ window#waybar {
 
 /* Модули-капсулы */
 #window,
+#backlight,
 #clock,
 #bluetooth,
 #pulseaudio,
@@ -77,15 +78,15 @@ window#waybar {
 }
 
 #network {
-    color: @pink;
+    color: @cyan;
 }
 
 #cpu {
-    color: @red;
+    color: @purple;
 }
 
 #memory {
-    color: @orange;
+    color: @yellow;
 }
 
 #temperature {
