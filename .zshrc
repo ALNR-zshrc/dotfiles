@@ -12,3 +12,11 @@ source /usr/share/cachyos-zsh-config/cachyos-config.zsh
 
 
 fastfetch
+
+alias cd='zoxide'
+alias cl='clear'
+alias ~='cd ~'
+alias ..='cd ..'
+alias update='sudo pacman -Suy'
+alias ls='eza --icon'
+alias cat='bat'
