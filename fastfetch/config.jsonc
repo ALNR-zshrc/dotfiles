@@ -1,0 +1,35 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "/home/alnr-sudo/Изображения/akane icon! ꒰ ✶⋆_˚༉.jpg",
+    "padding": {
+      "top": 2,
+      "left": 2,
+      "right": 2
+    },
+    "width": 35,
+    "height": 15
+  },
+  "display": {
+    "separator": " ➜  ",
+    "color": "blue" 
+  },
+  "modules": [
+    "title",
+    "separator",
+    "os",
+    "host",
+    "kernel",
+    "uptime",
+    "packages",
+    "shell",
+    "display",
+    "wm",
+    "terminal",
+    "cpu",
+    "memory", 
+    "disk",
+    "break",
+    "colors"
+  ]
+}
