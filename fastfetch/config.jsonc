@@ -3,12 +3,12 @@
   "logo": {
     "source": "/home/alnr-sudo/Изображения/akane icon! ꒰ ✶⋆_˚༉.jpg",
     "padding": {
-      "top": 2,
+      "top": 1,
       "left": 2,
       "right": 2
     },
-    "width": 35,
-    "height": 15
+    "width": 25,
+    "height": 12
   },
   "display": {
     "separator": " ➜  ",
